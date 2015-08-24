@@ -17,6 +17,8 @@
 			CommandLineTemplate="%(REFLECT.CommandLineTemplate)"
 			Inputs="%(REFLECT.Inputs)"
 			OutputFormat="%(REFLECT.OutputFormat)"
+			IncludePaths="%(REFLECT.IncludePaths)"
+			AdditionalIncludePaths="%(REFLECT.AdditionalIncludePaths)"
 		/>
 	</Target>
   

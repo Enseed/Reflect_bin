@@ -59,11 +59,20 @@
 			/> 
 
 		<StringListProperty 
+			Name="AdditionalIncludePaths"
+			Category="General"
+			DisplayName="Additional Include Paths"
+			Description="Sets path for include file.     (-I&quot;[path]&quot;)"
+			Switch="-I&quot;[value]&quot;"
+			/>
+
+		<StringListProperty 
 			Name="IncludePaths"
 			Category="General"
 			DisplayName="Include Paths"
-			Description="Sets path for include file.     (-I[path])"
-			Switch="-I[value]"
+			Description="Sets path for include file.     (-I&quot;[path]&quot;)"
+			Visible="False"
+			Switch="-I&quot;[value]&quot;"
 			/>
 
 		<StringListProperty

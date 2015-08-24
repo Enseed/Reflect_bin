@@ -7,10 +7,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <REFLECT>
-	  <ReflectExe Condition="'$(ReflectExe)' == ''">..\..\..\Reflect\bin\x64\Reflect.exe</ReflectExe>
-      <OutputFormat>$(IntDir)%(FileName).rh</OutputFormat>
-      <CommandLineTemplate>%(ReflectExe) [AllOptions] [AdditionalOptions]  %(FullPath) </CommandLineTemplate>
-      <ExecutionDescription>Assembling [Inputs]...</ExecutionDescription>
+		<AdditionalIncludePaths>$(IncludePath)</AdditionalIncludePaths>
+		<IncludePaths>%(IncludePaths)</IncludePaths>
+		<ReflectExe Condition="'$(ReflectExe)' == ''">..\..\Reflect\bin\x64\Reflect.exe</ReflectExe>
+		<OutputFormat>$(IntDir)%(FileName).rh</OutputFormat>
+		<CommandLineTemplate>%(ReflectExe) -fms-compatibility-version=19.00.22609 [AllOptions] [AdditionalOptions]  %(FullPath) </CommandLineTemplate>
+		<ExecutionDescription>Assembling [Inputs]...</ExecutionDescription>
     </REFLECT>
   </ItemDefinitionGroup>
 </Project>
