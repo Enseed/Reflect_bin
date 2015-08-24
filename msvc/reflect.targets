@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<ItemGroup>
+		<PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+		<AvailableItemName Include="REFLECT">
+			<Targets>_REFLECT</Targets>
+		</AvailableItemName>
+	</ItemGroup>
+
+	<Target Name="_REFLECT"
+			Outputs="%(REFLECT.OutputFormat)"
+			Inputs="%(REFLECT.Identity);%(REFLECT.AdditionalDependencies);$(MSBuildProjectFile)"
+			DependsOnTargets="_SelectedFiles">
+		<REFLECT
+			ReflectExe="%(REFLECT.ReflectExe)"
+			CommandLineTemplate="%(REFLECT.CommandLineTemplate)"
+			Inputs="%(REFLECT.Inputs)"
+			OutputFormat="%(REFLECT.OutputFormat)"
+		/>
+	</Target>
+  
+    <UsingTask TaskName="REFLECT" TaskFactory="XamlTaskFactory" AssemblyName="Microsoft.Build.Tasks.v4.0">
+        <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+    </UsingTask>
+
+	</Project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup
+    Condition="'$(REFLECTBeforeTargets)' == '' and '$(REFLECTAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <REFLECTBeforeTargets>Midl</REFLECTBeforeTargets>
+    <REFLECTAfterTargets>CustomBuild</REFLECTAfterTargets>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <REFLECT>
+	  <ReflectExe Condition="'$(ReflectExe)' == ''">..\..\..\Reflect\bin\x64\Reflect.exe</ReflectExe>
+      <OutputFormat>$(IntDir)%(FileName).rh</OutputFormat>
+      <CommandLineTemplate>%(ReflectExe) [AllOptions] [AdditionalOptions]  %(FullPath) </CommandLineTemplate>
+      <ExecutionDescription>Assembling [Inputs]...</ExecutionDescription>
+    </REFLECT>
+  </ItemDefinitionGroup>
+</Project>
