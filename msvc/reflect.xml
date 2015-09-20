@@ -38,13 +38,6 @@
 			</StringProperty.DataSource>
 		</StringProperty>
 
-		<StringProperty 
-			Name="ReflectExe"
-			Category="General"
-			DisplayName="Reflect Executable Path"
-			IncludeInCommandLine="False"
-			/>  
-
 <!--		<StringProperty 
 			Name="OutputFormat"
 			Category="General"

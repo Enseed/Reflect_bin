@@ -12,8 +12,13 @@
 			Outputs="%(REFLECT.OutputFormat)"
 			Inputs="%(REFLECT.Identity);%(REFLECT.AdditionalDependencies);$(MSBuildProjectFile)"
 			DependsOnTargets="_SelectedFiles">
+		<Message Text="ReflectExe: %(REFLECT.ReflectExe)" Importance="High"></Message>
+		<Message Text="CommandLineTemplate: %(REFLECT.CommandLineTemplate)" Importance="High"></Message>
+		<Message Text="Inputs: %(REFLECT.Identity);%(REFLECT.AdditionalDependencies);$(MSBuildProjectFile)" Importance="High"></Message>
+		<Message Text="OutputFormat: %(REFLECT.OutputFormat)" Importance="High"></Message>
+		<Message Text="IncludePaths: %(REFLECT.IncludePaths)" Importance="High"></Message>
+		<Message Text="AdditionalIncludePaths: %(REFLECT.AdditionalIncludePaths)" Importance="High"></Message>
 		<REFLECT
-			ReflectExe="%(REFLECT.ReflectExe)"
 			CommandLineTemplate="%(REFLECT.CommandLineTemplate)"
 			Inputs="%(REFLECT.Inputs)"
 			OutputFormat="%(REFLECT.OutputFormat)"
@@ -21,7 +26,7 @@
 			AdditionalIncludePaths="%(REFLECT.AdditionalIncludePaths)"
 		/>
 	</Target>
-  
+
     <UsingTask TaskName="REFLECT" TaskFactory="XamlTaskFactory" AssemblyName="Microsoft.Build.Tasks.v4.0">
         <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
     </UsingTask>
